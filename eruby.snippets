@@ -40,6 +40,10 @@ snippet er "eval expr" w
 <% ${1} %>$0
 endsnippet
 
+snippet tr "add translation" w
+<%= t '${1:key}' %>$0
+endsnippet
+
 snippet each "each loop" w
 <% ${1:obj}.each do |${2:arg}| %>
   ${0}

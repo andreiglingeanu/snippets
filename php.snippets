@@ -6,6 +6,39 @@ snippet p "php" w
 $0
 endsnippet
 
+snippet ifndef "" !b
+if ( ! function_exists( '${1:function}' ) ) {
+	function $1($2) {
+		$0
+	}
+}
+endsnippet
+
+snippet wpajax "Description" !b
+add_action( 'wp_ajax_my_action', 'my_action_callback' );
+
+function my_action_callback() {
+	global $wpdb; // this is how you get access to the database
+
+	$whatever = intval( $_POST['whatever'] );
+
+	$whatever += 10;
+
+        echo $whatever;
+
+	wp_die(); // this is required to terminate immediately and return a proper response
+}
+endsnippet
+
+snippet debug "Description" !b
+require "/Users/andreiglingeanu/Dropbox/bin/psysh";
+\Psy\Shell::debug(get_defined_vars(), $this);
+endsnippet
+
+snippet ifndeffw "framework" w
+if (! defined('FW')) { die('Forbidden'); }
+endsnippet
+
 snippet php "php" w
 <?php
 $0

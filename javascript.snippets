@@ -1,6 +1,15 @@
+
 ###########################################################################
 #                            TextMate Snippets                            #
 ###########################################################################
+
+snippet doshitonce "Do your shit only once, based on a global window flag"
+if (! window.shitDoneOnce) {
+	window.shitDoneOnce = true;
+
+	${0:shit_to_run_once}
+}
+endsnippet
 
 #######################################################################
 #                               Angular                               #
@@ -37,29 +46,29 @@ snippet ngdirective
 		.module('${1:module}')
 		.directive('${2:directive}', $2);
 
-	$2.$inject = [];
+	$2.$inject = [
+	];
 
 	function $2(${3:dependencies}) {
-		// Usage:
-		//
-		// Creates:
-		//
 		var directive = {
 			bindToController: true,
 			controller: ${4:Controller},
-			controllerAs: '${5:vm}',
+			controllerAs: 'ctrl',
 			link: link,
-			restrict: 'A',
+			templateUrl: 'URL_TO TEMPLATE.html',
+			restrict: 'EA',
 			scope: {
 			}
 		};
+
 		return directive;
 
 		function link(scope, element, attrs) {
 		}
 	}
 
-	$4.$inject = [];
+	$4.$inject = [
+	];
 
 	function $4() {
 	}

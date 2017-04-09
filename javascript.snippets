@@ -83,18 +83,18 @@ snippet ngfactory
 		.module('${1:module}')
 		.factory('${2:factory}', $2);
 
-	$2.$inject = [];
+	$2.$inject = [
+	];
 
-	function $2(${3:dependencies}) {
+	function $2() {
 		var service = {
-			${4:func}: $4
 		};
+
 		return service;
 
 		////////////////
 
-		function $4() {
-		}
+		// funcs and stuff
 	}
 })();
 endsnippet
